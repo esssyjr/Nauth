@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+requests
+pillow
+opencv-python-headless
+numpy
+python-multipart
+python-dotenv

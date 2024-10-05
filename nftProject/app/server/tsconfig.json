@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist", // Compiled JS files will go here
+    "rootDir": "./src", // TypeScript source files are in src
+    "strict": true, // Ensure strict typing
+    "esModuleInterop": true,
+    "module": "commonjs", // For Node.js
+    "target": "es6" // ECMAScript version to target
+  }
+}

@@ -27,4 +27,5 @@ async def authenticate_nft(file: UploadFile = File(...)):
     return {"authenticated": True, "message": "NFT appears to be unique", "similarity_score": similarity_score}
     
 @app.get("/")
-    return {"Live"}
+async def health_check():
+    return {"status": "Live"}

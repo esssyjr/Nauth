@@ -25,3 +25,6 @@ async def authenticate_nft(file: UploadFile = File(...)):
     if is_similar:
         return {"authenticated": False, "message": "Potential forgery detected", "similarity_score": similarity_score}
     return {"authenticated": True, "message": "NFT appears to be unique", "similarity_score": similarity_score}
+    
+@app.get("/")
+    return {"Live"}

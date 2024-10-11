@@ -3,6 +3,8 @@ import { uploadNft } from '../controllers/fileController';
 import multer from 'multer';
 import path from 'path';
 
+import fs from 'fs';
+import authenticateNft from '../middlewares/authenticateNft';
 // Create a router
 const uploadRouter = Router();
 
@@ -25,11 +27,11 @@ export const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 // Define routes
-uploadRouter.route('/upload').post(upload.single('image'), uploadNft);
+uploadRouter.route('/upload').post(upload.single('nft'), authenticateNft, uploadNft);
+
 
 
 // Create the uploads folder if it doesn't exist
-import fs from 'fs';
 const uploadDir = 'uploads';
 if (!fs.existsSync(uploadDir)){
   fs.mkdirSync(uploadDir);
